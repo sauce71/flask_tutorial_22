@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+Skjema
+{% endblock %}
+{% block content %}
+<form action="{{ url_for('form_post') }}" method="post">
+
+    <label for="user_id">Bruker Id:</label><br>
+    <input type="text" id="user_id" name="user_id" value=""><br>
+
+    <label for="visit_date">Dato:</label><br>
+    <input type="date" id="visit_date" name="visit_date" value="{{ visit_date }}"><br>
+
+    <label for="destination">Velg sted:</label><br>
+    <select name="destination" id="destination" value="{{ destination }}">
+        <option value="0" {% if destination == 0 %} selected {% endif %}>Østre Vealøs</option>
+        <option value="1" {% if destination == 1 %} selected {% endif %}>Vestre Vealøs</option>
+        <option value="2" {% if destination == 2 %} selected {% endif %}>Blåfjell</option>
+    </select>
+    <br>
+
+    <label for="start_place">Start:</label><br>
+    <select name="start_place" id="start_place">
+        <option value="0">Lensmannseter</option>
+        <option value="1">Oddbakken</option>
+        <option value="2">Skifjell</option>
+    </select>
+    <br>
+
+
+
+    <input type="submit" id="submit" name="submit" value="Lagre">
+
+</form>
+{% endblock %}
