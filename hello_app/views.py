@@ -53,10 +53,12 @@ def form_post():
     destination = request.form['destination']
     start_place = request.form['start_place']
     
-    print(user_id)
-    print(visit_date)
 
     #TODO: Lagre data i en kommaseparert fil
     #TODO: lagre også datetime.now() i filen (Tidspunktet du registrer data)
+
+    f = open('data.csv', 'a')
+    f.write(f'{datetime.now()},{user_id},{visit_date},{destination},{start_place}\n')
+    f.close()
 
     return redirect(url_for('form'))
