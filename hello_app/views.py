@@ -36,10 +36,13 @@ def form():
     #TODO: Sett Vestre Valøs som standard verdi 
     #TODO: Sett Skifjell som standardverdi
 
-    destination = 2
+    # Setter opp default verdie
+    destination = 1
     visit_date = date.today()
+    start_place = 2
 
     #return render_template("form.html", destination=destination)
+    # Bruker **locals() fro å slippe å skrive alle variablene som parameter
     return render_template("form.html", **locals())
 
 

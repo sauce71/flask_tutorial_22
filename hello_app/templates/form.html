@@ -21,9 +21,9 @@ Skjema
 
     <label for="start_place">Start:</label><br>
     <select name="start_place" id="start_place">
-        <option value="0">Lensmannseter</option>
-        <option value="1">Oddbakken</option>
-        <option value="2">Skifjell</option>
+        <option value="0" {% if start_place == 0 %} selected {% endif %}>Lensmannseter</option>
+        <option value="1" {% if start_place == 1 %} selected {% endif %}>Oddbakken</option>
+        <option value="2" {% if start_place == 2 %} selected {% endif %}>Skifjell</option>
     </select>
     <br>
 
